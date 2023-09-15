@@ -1,25 +1,37 @@
-from flask import Flask, render_template
-import pandas as pd
+<!DOCTYPE html>
+<html lang="en">
 
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('base.html')
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-df = pd.read_csv('https://raw.githubusercontent.com/hantswilliams/HHA_504_2023/main/WK1/data/113243405_StonyBrookSouthamptonHospital_StandardCharges.csv')
-@app.route('/data')
-def data(data=df):
-    data = data.sample(15)
-    return render_template('data.html', data=data)
-
-if __name__ == '__main__':
-    app.run(
-        debug=True,
-        port=8080
-    )
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Healthcare App</title>
     
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200">
+
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl">Welcome to My Healthcare App</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li><a href="/about" class="hover:underline">About</a></li>
+                <li><a href="/data" class="hover:underline">Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="p-4">
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 mt-6">
+        <p>© 2023 My Healthcare App. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
