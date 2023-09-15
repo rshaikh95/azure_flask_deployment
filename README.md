@@ -6,6 +6,6 @@
 
 # Deploying to Azure Web Services
 ## I then deployed app.py via Azure. I first installed azure into google shell using a specific command. I then tested it out and began to log in using a device code. I then got into my student subscription via commands az account list and set. 
-## I created a new resource group on Azure and matched it onto the shell via az webapp up and inserting my resource group name, app name, runtime and sku. After loading on the shell I checked Azure to see of it showed on the web services page. Finally I terminated the webapp at the end
+## I created a new resource group on Azure and matched it onto the shell via az webapp up and inserting my resource group name, app name, runtime and sku. After loading on the shell I checked Azure to see of it showed on the web services page. Finally I terminated the webapp at the end by deleting from Azure Web Services
 
 # rahilazurerg.azurewebsites.net
